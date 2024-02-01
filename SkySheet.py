@@ -41,10 +41,9 @@ if metin == """0""":
     liste = ("1. Little Nightmares six's Music box\n2. Six's Music box(V2)\n3. Amelie\n4. Carol of the bells\n5. Coldplay: Viva la Vida (1,2,3,4,5)")
     print(liste)
     selection = int(input())
-    print("oynatma hızını giriniz")
-    hiz = float(input("Hızı girin:1,2,3,4,5 \nÖnerilen 2 veya 3: "))
+    hiz = float(input("oynatma hızını giriniz(1,2,3,4,5) (1 hızlı, 5 yavaş)\nÖnerilen 2 veya 3: "))
     hiz = hiz/10
-    print(hiz)
+    print("Hız ayarlandı:",hiz)
     print("başlıyor...")
     time.sleep(1)
     print(4)
@@ -72,29 +71,25 @@ metin = metin.replace(".","x").lower()
 
 
 sheet = "a1 a2 a3 a4 a5 b1 b2 b3 b4 b5 c1 c2 c3 c4 c5".split()
-key = "y u ı o p h j k l ş n m ö ç b".split()
+key = "y u ı o p h j k l ş n m ö ç b".split()# buraya kendi klavyenizdeki piyano tuşlarını yazın ("." karakteri desteklenmiyor o yüzden "." olan yeri "b" ile değiştirdim, oyundaki kontrollerden ". notasını b ile değişirin")
 
 
 for i in range(len(sheet)):
     metin = metin.replace(sheet[i], key[i])
 
 
-# print(metin.split())
-
 for i in range(len(sheet)):
     metin = metin.replace(sheet[i], key[i])
 
-
-# print(metin.split())
 
 for i in metin.split():
     if i == "x":
-        time.sleep(0.5)
+        time.sleep(1)
         pass
     else:
         for char in i:
             keyboard.press(char)
-        time.sleep(0.3)  # Her karakterin ardından 0.1 saniye bekle
+        time.sleep(hiz)  # Her karakterin ardından girilen hız kadar bekle
         for char in i:
             
             keyboard.release(char)
