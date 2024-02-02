@@ -1,7 +1,7 @@
 import time
 import keyboard
 
-print("çalmak istediğiniz müziğin notalarını giriniz (notanız yoksa 0 a basın): ")
+
 
 sixMetin = """ 
 A3B3 . B2 . A3B1 . A3B3 . B2 . A3B1 . A3B2 . B1 . A3A5 . A3B2 . B1 . A3A5 . A1B5 . B4 . A3B3 . A1B5 . B4 . A3B3 . A3B4 . B3 . A3B2 . A3B4 . B3 . A3B2 . A2C1 . B5 . A3B2 . A2C1 . B5 . A3B2 . 
@@ -35,15 +35,7 @@ coldMetin = """
 A4B1 A4B1 A4B1 A4B1 A5B2 A5B2 A5B2 A5B2 A1A5 A1A5 A1A5 A1A5 A3B1 A3B1 A3B1 A3B1 A1A4B1 A1A4B1 A1A4B1 A1A4B1 A2A5B2 A2A5 A2A5 A2A5B2 A1A3A5 A1A3A5 A1A3A5 A1A3A5 A1A3B1 A1A3B1 A1A3B1 A1A3B1B5 A1A3B1B5 A1A3B1B5 A1A4B1B5 A1A4B1B5 A1A4B1 A1A4B1C1 A2A5B2B4 A2A5B2 A2A5B2 A2A5B2B4 A2A5B2B4 A2A5B2B3 A1A3A5B4 A1A3A5B4 A1A3A5B3 A1A3A5B4 A1A3A5B5 A1A3A5B3 A1A3B2 A1A3B1 A1A3B5 A1A3B5 A1A3B5 A1A4B1B5 A1A4B1 A1A4B1 A1A4B1 C1 A1A4B1 A2A5B4 A2A5B2 A2A5B2 A2B4 A2A5B2 A2A5B2 A2A5B2B3 B3 B5 A1A3A5B5 A1A3A5B3 A1A3A5B5 A1A3A5 A1A3A5B5 A1A4B1B4 B3 A1A4B1B3 A1A3B1 A1A3B1 A1A3B1 B1 A1A3B1 A1A4B1 A1A4B1 A1A4B1 A4B1B5 A2A4B2 A2A5B2C2 A2A5B2 A2A5B2 A2A5B2 C2 A2A5B2C2 A2A5B2C2 A1A3A5C2 A1A3A5 A1A3A5B5 A5 A1A3A5C2 A1A3A5C1 A1A3B1B5 A3B1B5 A1A4B1B5 A1A4B1B5 A1A4B1B5 A1A4B1B5 A4 A1B1B5 B5 A1A4B1 C1 A2A5B2 B4 A2A5B2 A2A5B2 A2A5B2 A2A5B2B3 B3 A1A3A5B5 B4 A1A3A5B3 A1A3A5B3 A1A3A5 B5 B1 A1A3B4 B1B3 A1A3B1B3 A1A3B1B3 A1A3B1 A1A3B1 A1A3B1 B3 A1A4B1B3 A4 A1A4B1 A1A4B1 C2 A1A4B1 A2A5B2C2 A2A5B2C2 A2A5B2B4 A2A5B2B5 A2A5B2C1
 """
 
-metin = input()
-if metin == """0""":
-    print("Hazır müzkilerden seçin")
-    liste = ("1. Little Nightmares six's Music box\n2. Six's Music box(V2)\n3. Amelie\n4. Carol of the bells\n5. Coldplay: Viva la Vida (1,2,3,4,5)")
-    print(liste)
-    selection = int(input())
-    hiz = float(input("oynatma hızını giriniz(1,2,3,4,5) (1 hızlı, 5 yavaş)\nÖnerilen 2 veya 3: "))
-    hiz = hiz/10
-    print("Hız ayarlandı:",hiz)
+def geriSay():
     print("başlıyor...")
     time.sleep(1)
     print(4)
@@ -53,46 +45,72 @@ if metin == """0""":
     print(2)
     time.sleep(1)
     print(1)
+
+def playMusic(metin,hiz):
+    metin = metin.replace(".","x").lower()
+
+    sheet = "a1 a2 a3 a4 a5 b1 b2 b3 b4 b5 c1 c2 c3 c4 c5".split()
+    key = "y u ı o p h j k l ş n m ö ç b".split()# buraya kendi klavyenizdeki piyano tuşlarını yazın ("." karakteri desteklenmiyor o yüzden "." olan yeri "b" ile değiştirdim, oyundaki kontrollerden ". notasını b ile değişirin")
     
+    for i in range(len(sheet)):
+        metin = metin.replace(sheet[i], key[i])
+
+
+    for i in metin.split():
+        if i == "x":
+            time.sleep(0.5)
+            pass
+        else:
+            for char in i:
+                keyboard.press(char)
+                print(i)
+            time.sleep(hiz)  # Her karakterin ardından girilen hız kadar bekle
+            for char in i:
+                keyboard.release(char)
+                
+
+def hizAyarla():
+    hiz = float(input("Oynatma hızını giriniz (1,2,3,4,5) (1 hızlı, 5 yavaş)\nÖnerilen 2 veya 3: "))
+    if hiz <0 or hiz >=10:
+        print("yanlış bir hiz girdiğiniz için hız 3 olarak ayarlandı")
+        print("bu hızlar programın çalışmamasına veya aşırı yavaş çalışmasına neden olabilirdi")
+        hiz = 3
+    hiz = hiz / 10
+    print("Hız ayarlandı:", hiz)
+    return hiz
+
     
-    if selection == 1:
-        metin = sixMetin 
-    elif selection == 2:
-        metin = six2Metin
-    elif selection == 3:
-        metin = amelieMetin
-    elif selection == 4:
-        metin = carolMetin
-    elif selection == 5:
-        metin = coldMetin
 
-metin = metin.replace(".","x").lower()
+def programiCalistir():
+    print("çalmak istediğiniz müziğin notalarını giriniz (notanız yoksa 0 a basın): ")
 
+    metin = input()
+    if metin == "0":
+        print("Hazır müziklerden seçin")
+        liste = ("1. Little Nightmares six's Music box\n2. Six's Music box(V2)\n3. Amelie\n4. Carol of the bells\n5. Coldplay: Viva la Vida (1,2,3,4,5)")
+        print(liste)
+        selection = int(input())
+        hiz = hizAyarla()
 
+        if selection == 1:
+            playMusic(sixMetin, hiz)
+        elif selection == 2:
+            playMusic(six2Metin, hiz)
+        elif selection == 3:
+            playMusic(amelieMetin, hiz)
+        elif selection == 4:
+            playMusic(carolMetin, hiz)
+        elif selection == 5:
+            playMusic(coldMetin, hiz)
 
-sheet = "a1 a2 a3 a4 a5 b1 b2 b3 b4 b5 c1 c2 c3 c4 c5".split()
-key = "y u ı o p h j k l ş n m ö ç b".split()# buraya kendi klavyenizdeki piyano tuşlarını yazın ("." karakteri desteklenmiyor o yüzden "." olan yeri "b" ile değiştirdim, oyundaki kontrollerden ". notasını b ile değişirin")
-
-
-for i in range(len(sheet)):
-    metin = metin.replace(sheet[i], key[i])
-
-
-for i in range(len(sheet)):
-    metin = metin.replace(sheet[i], key[i])
-
-
-for i in metin.split():
-    if i == "x":
-        time.sleep(1)
-        pass
     else:
-        for char in i:
-            keyboard.press(char)
-        time.sleep(hiz)  # Her karakterin ardından girilen hız kadar bekle
-        for char in i:
-            
-            keyboard.release(char)
-            print(i)
+        playMusic(metin,hizAyarla())
 
-input()
+
+
+while True:
+   
+    programiCalistir()
+    devamEt = int(input("Programı yeniden başlatmak için 1'e basın: "))
+    if devamEt != 1:
+        break
