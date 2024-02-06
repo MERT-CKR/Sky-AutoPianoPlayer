@@ -1,5 +1,6 @@
 import time
 import keyboard
+import time
 
 
 
@@ -47,6 +48,10 @@ def geriSay():
     print(1)
 
 def playMusic(metin,hiz):
+    geriSay()
+
+    startTime = time.time()
+
     metin = metin.replace(".","x").lower()
 
     sheet = "a1 a2 a3 a4 a5 b1 b2 b3 b4 b5 c1 c2 c3 c4 c5".split()
@@ -67,6 +72,12 @@ def playMusic(metin,hiz):
             time.sleep(hiz)  # Her karakterin ardından girilen hız kadar bekle
             for char in i:
                 keyboard.release(char)
+
+    endTime = time.time()
+    duration = endTime - startTime
+    duration = str(duration)[:4]
+    print(f"çalma süresi: {duration} sn")
+
                 
 
 def hizAyarla():
@@ -102,9 +113,11 @@ def programiCalistir():
             playMusic(carolMetin, hiz)
         elif selection == 5:
             playMusic(coldMetin, hiz)
+        
 
     else:
         playMusic(metin,hizAyarla())
+        
 
 
 
