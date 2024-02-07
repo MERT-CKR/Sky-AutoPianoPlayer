@@ -63,7 +63,7 @@ def playMusic(metin,hiz):
 
     for i in metin.split():
         if i == "x":
-            time.sleep(0.5)
+            time.sleep(hiz + 0.2)
             pass
         else:
             for char in i:
