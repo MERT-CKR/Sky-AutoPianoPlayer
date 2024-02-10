@@ -1,40 +1,42 @@
 import time
 import keyboard
-import time
+import sheets
 
 
+muzikler = {
+    1:sheets.sixMetin,
+    2:sheets.six2Metin,
+    3:sheets.amelieMetin,
+    4:sheets.carolMetin,
+    5:sheets.coldMetin,
+    6:sheets.naruto,
+    7:sheets.japanese,
+    8:sheets.stillDRE,
+    9:sheets.erased,
+    10:sheets.faded,
+    11:sheets.canCAnikina,
+    12:sheets.harryPotter,
+    13:sheets.happyBirthDay,
+    14:sheets.deathNote,
+    15:sheets.countingStar
 
-sixMetin = """ 
-A3B3 . B2 . A3B1 . A3B3 . B2 . A3B1 . A3B2 . B1 . A3A5 . A3B2 . B1 . A3A5 . A1B5 . B4 . A3B3 . A1B5 . B4 . A3B3 . A3B4 . B3 . A3B2 . A3B4 . B3 . A3B2 . A2C1 . B5 . A3B2 . A2C1 . B5 . A3B2 . 
-B1B5 . 
-A4B4 . 
-A3B3 . 
-A2B2 . 
-A3B1 A5 B1 B2 A3B3 B2 B1 A5 A3B1 A5 B1 B2 A3B3 B2 A5 B2 A1A3 A1 A3 A1 A3 A1 A3A5 . A1A3 A1 A3 A1 A3 A1 A3 A1 B1B3 B2 B3 B4 B3B5 B4 B3 B2 B1B3 B2 B3 B4 B3B5 B4 B3 B2 B1B5 A3 B1 A3 B1 A3 B1 A3 B1 A3 B1 A3 B1 A3 B1 A3 A2C1 B5 A4B4 B5 A3B2 . B1 A2C1 B5 A4B4 B5 A4B4 B3 A2B2 B1 A1B1B5 . A4B1B4 . A2B1C1 . B1B5C3 . A3B3 . B2 . A2B1 . A3B3 . B2 . A2B1 . A3B2 . B1 . A3A5 . A3B2 . B1 . A3A5 . A1B5 . B4 . A3B3 . A1B5 . B4 . A3B3 . A3B4 . B3 . A3B2 . A3B4 . B3 . A3B2 . A2C1 . B5 . A3B2 . A2C1 . B5 . A3B2 . 
-B1B5 . A4B4 . A3B3 . A2B2 . 
-A3B1 A5 B1 B2 A3B3 B2 B1 A5 A3B1 A5 B1 B2 A3B3 B2 A5 B2 A1A3 A1 A3 A1 A3 A1 A3A5 . A1A3 A1 A3 A1 A3 A1 A3 A1 B1B3 B2 B3 B4 B3B5 B4 B3 B2 B1B3 B2 B3 B4 B3B5 B4 B3 B2 B1B5 A3 B1 A3 B1 A3 B1 A3 B1 A3 B1 A3 B1 A3 B1 A3 B1 A3 A2C1 B5 A4B4 B5 A3B2 . B1 A2C1 B5 A4B4 B5 A4B4 B3 A2B2 B1 A1B1B5 . A4B1B4 . A2B1C1 . B1B3B5C3
-"""
 
-six2Metin = """ 
-B1B3 . B2 . A3B1 . B1B3 . B2 . A3B1 . 
-A3B2 . B1 . A3A5 . 
-A3B2 . B1 . A3A5 . A1B5 . B4 . A3B3 . A1B5 . B4 . A3B3 . A3B4 . B3 . A5B2 . A3B4 . B3 . A5B2 . A4C1 . B5 . B1B2 . A4C1 . B5 . B1B2 . A3B5 . B1B4 . A3B3 . A3B2 . A3B1 A5 B1 B2 A3B3 B2 B1 A5 A3B1 A5 B1 B2 A3B3 B2 B1 B2 A3 . 
-A5 . A3 . A3 . A1B3 B2 A3B3 B4 A5B5 B4 A3B3 B2 A1B3 B2 A3B3 B4 A5B5 B4 A3B3 B2 A3B5 . A5 . A4C1 B5 B1B4 B5 B2 . B1 A4C1 B5 B1B4 B5 B4 B3 B2 B1 A3B5 . B4 . A3B3 . B2 . A3B1B3 . B2 . A3B1 . B1 . A3B1B3 . B2 . A3B1 . B1 . A3A5B2 . B1 . A3A5 . A3 . A3B2 . B1 . A3A5 . A3 . A1A3B5 . B4 . A3B3 . A1 . A1A3B5 . B4 . A3B3 . A1 . A3A5B4 . B3 . A5B2 . A3 . A3A5B4 . B3 . A5B2 . A3 . A4B1C1 . B5 . A4B2 . B1 . A4B1C1 . B5 . A4B2 . B1 . A3B1B5 . B4 . A3B3 . B2 . A3B1 A5 B1 B2 A3B3 B2 B1 A5 A3B1 A5 B1 B2 A3B3 B2 B1 B2 A3 . A3 . A5 . A3 . A3 . A1B3 B2 A3B3 B4 A5B5 B4 A3B3 B2 A1B3 B2 A3B3 B4 A5B5 B4 A3B3 B2 A3B5 . A5 . B2 . A3B5 . A5 . A4C1 B5 B1B4 B5 B1 . B1 A4C1 B5 B1B4 B5 B4 B3 A4B2 B1 A3B5 . B1B4 . A3B3 . B2 . B3C5 . B2C4 . B1C3 . B3C5 . B2C4 . B1C3 . B2C4 . B1C3 . A5C2 . B2C4 . B1C3 . A5C2 . A3B5 . A2B4 . A1B3 . A3B5 . A2B4 . A1B3 . A2B4 . A1B3 . B2 . A2B4 . A1B3 . B2 . A4C1 . A3B5 . B2 . A4C1 . A3B5 . B2 . A3B5 . A2B4 . A1B3 . B2 . B1
+}
 
+# def log(name,value):
+    
+#     dir_path = os.path.dirname(os.path.abspath(__file__))
+    
+#     log_file_name = "sheets.py"
+#     log_file_path = os.path.join(dir_path, log_file_name)
+    
+#     # Loglama işlemi
+#     log_message = f'{name} = """{value}""" '
+#     with open(log_file_path, "a", encoding='utf-8') as log_file:
+#         log_file.write(log_message + "\n")
+    
+#     print("Loglama işlemi tamamlandı.")
 
-"""
-
-amelieMetin = """
-A1 . A3B3 B2 B1B3 . B5A3 C1 B5A1 A3 B1 A3 . A1 A3B2 B1 A5B2 B3A3 B4 A1B3 . A5 A3 . B2 B2A3 B1 B2A5 B5A3 C1 B5B2 A3 A5 A3 . B2 B2A2 B1 B2A5 A2 B2 A2 . A5 A2 . 
-A1C3 . A3 B1 A3B5 . A1 . A3 . B1 A3 . C2 A1 . A3 A5 A3B5 A1 . A3 A5 A3 . B2C4 . A3 A5 B5A3 B2 A3 A5 C2A3 C3 . C4B2 A2 . A5 . A2B4 B2 A2 . A5 A2 . C5A1 A3 B1 C3A3 . A1 A3 B1 A3 A1C5 A3 A5 C2A3 A1 A3 A5 A3 B2C4 A3 A5 C2A3 B2 A3 A5 A3C2 C3 B2C4 A2 . A5 A3C2 . A2 . B2 A2 . A5 . A2 . A1 A3 B1
-"""
-carolMetin = """
-C5 C4 C5 C3 C5 C4 C5 C3 C5 C4 C5 C3 C5 C4 C5 C3 C1C5 C4 C5 C3 B5C5 C4 C5 C3 B4C5 C4 C5 C3 B3C5 C4 C5 C3 B1B5 B4 B5 B3 A5B5 B4 B5 B3 A4B5 B4 B5 B3 A3B5 B4 B5 B3 B1B5 B4 B5 B3 A5B5 B4 B5 B3 A4B5 B4 B5 B3 A3B5 B4 B5 B3 B3C3 B3C3 B3C3 B2C2 B1C1 A5B5 A5B5 A5B5 A4B4 A3B3 A4B4 A4B4 A4B4 A5B5 A4B4 A3B3 A2B2 A3B3 A1B1 A3 A4 A5 B1 B2 B3 B4 B5 B4 B3 A4 A5 B1 B2 B3 B4 B5 B5 B4 B3 B3 B2 B3 B1 B3 B2 B3 B1 B3 B2 B3 . A1 A3 B1 . B3C3 B2C2 B1C1 A5B5 A4B4 A3B3 A2B2 A3B1 B3C3
-"""
-
-coldMetin = """
-A4B1 A4B1 A4B1 A4B1 A5B2 A5B2 A5B2 A5B2 A1A5 A1A5 A1A5 A1A5 A3B1 A3B1 A3B1 A3B1 A1A4B1 A1A4B1 A1A4B1 A1A4B1 A2A5B2 A2A5 A2A5 A2A5B2 A1A3A5 A1A3A5 A1A3A5 A1A3A5 A1A3B1 A1A3B1 A1A3B1 A1A3B1B5 A1A3B1B5 A1A3B1B5 A1A4B1B5 A1A4B1B5 A1A4B1 A1A4B1C1 A2A5B2B4 A2A5B2 A2A5B2 A2A5B2B4 A2A5B2B4 A2A5B2B3 A1A3A5B4 A1A3A5B4 A1A3A5B3 A1A3A5B4 A1A3A5B5 A1A3A5B3 A1A3B2 A1A3B1 A1A3B5 A1A3B5 A1A3B5 A1A4B1B5 A1A4B1 A1A4B1 A1A4B1 C1 A1A4B1 A2A5B4 A2A5B2 A2A5B2 A2B4 A2A5B2 A2A5B2 A2A5B2B3 B3 B5 A1A3A5B5 A1A3A5B3 A1A3A5B5 A1A3A5 A1A3A5B5 A1A4B1B4 B3 A1A4B1B3 A1A3B1 A1A3B1 A1A3B1 B1 A1A3B1 A1A4B1 A1A4B1 A1A4B1 A4B1B5 A2A4B2 A2A5B2C2 A2A5B2 A2A5B2 A2A5B2 C2 A2A5B2C2 A2A5B2C2 A1A3A5C2 A1A3A5 A1A3A5B5 A5 A1A3A5C2 A1A3A5C1 A1A3B1B5 A3B1B5 A1A4B1B5 A1A4B1B5 A1A4B1B5 A1A4B1B5 A4 A1B1B5 B5 A1A4B1 C1 A2A5B2 B4 A2A5B2 A2A5B2 A2A5B2 A2A5B2B3 B3 A1A3A5B5 B4 A1A3A5B3 A1A3A5B3 A1A3A5 B5 B1 A1A3B4 B1B3 A1A3B1B3 A1A3B1B3 A1A3B1 A1A3B1 A1A3B1 B3 A1A4B1B3 A4 A1A4B1 A1A4B1 C2 A1A4B1 A2A5B2C2 A2A5B2C2 A2A5B2B4 A2A5B2B5 A2A5B2C1
-"""
 
 def geriSay():
     print("başlıyor...")
@@ -62,8 +64,11 @@ def playMusic(metin,hiz):
 
 
     for i in metin.split():
+        if keyboard.is_pressed('"'):
+            print('" tuşuna basıldı. Döngü sona eriyor.')
+            break
         if i == "x":
-            time.sleep(hiz + 0.2)
+            time.sleep(hiz+0.22)  # notalardaki "." olan yerlerde beklenecek süre
             pass
         else:
             for char in i:
@@ -98,25 +103,16 @@ def programiCalistir():
     metin = input()
     if metin == "0":
         print("Hazır müziklerden seçin")
-        liste = ("1. Little Nightmares six's Music box\n2. Six's Music box(V2)\n3. Amelie\n4. Carol of the bells\n5. Coldplay: Viva la Vida (1,2,3,4,5)")
+        liste = sheets.liste
         print(liste)
         selection = int(input())
-        hiz = hizAyarla()
-
-        if selection == 1:
-            playMusic(sixMetin, hiz)
-        elif selection == 2:
-            playMusic(six2Metin, hiz)
-        elif selection == 3:
-            playMusic(amelieMetin, hiz)
-        elif selection == 4:
-            playMusic(carolMetin, hiz)
-        elif selection == 5:
-            playMusic(coldMetin, hiz)
+        playMusic(muzikler[selection],hizAyarla())
         
-
     else:
+        # name = input("müziğin adını girin: ")
+        # log(name,metin)
         playMusic(metin,hizAyarla())
+        
         
 
 
