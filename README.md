@@ -9,13 +9,13 @@ You need to have the following libraries installed:
 
 Install them using the following commands in your command line interface:
 
-\`\`\`cmd
+```cmd
 pip install pandas
-\`\`\`
+```
 
-\`\`\`cmd
+```cmd
 pip install keyboard
-\`\`\`
+```
 
 ### Usage:
 
