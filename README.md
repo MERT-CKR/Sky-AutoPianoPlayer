@@ -17,7 +17,7 @@ pip install pandas
 pip install keyboard
 ```
 
-## Before using this application, ensure that Python is installed on your computer.
+### Before using this application, ensure that Python is installed on your computer.
 
 ### Usage:
 
@@ -33,7 +33,7 @@ pip install keyboard
 
 * The music sheet will be automatically added to the database, allowing you to use it next time.
 
-* To delete any saved music, open the `csv` file and delete the corresponding entry.
+* To delete any saved music, open the `database.csv` file and delete the corresponding entry.
 
 * This script simulates key presses on your keyboard to play the music.
 
