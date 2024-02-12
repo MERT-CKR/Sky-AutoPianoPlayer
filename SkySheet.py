@@ -1,41 +1,25 @@
 import time
 import keyboard
-import sheets
+import pandas as pd
+data = pd.read_csv("database.csv")
 
+def bring(id):
+    sheet_value = data.loc[id-1, 'sheet']
+    return sheet_value
 
-muzikler = {
-    1:sheets.sixMetin,
-    2:sheets.six2Metin,
-    3:sheets.amelieMetin,
-    4:sheets.carolMetin,
-    5:sheets.coldMetin,
-    6:sheets.naruto,
-    7:sheets.japanese,
-    8:sheets.stillDRE,
-    9:sheets.erased,
-    10:sheets.faded,
-    11:sheets.canCAnikina,
-    12:sheets.harryPotter,
-    13:sheets.happyBirthDay,
-    14:sheets.deathNote,
-    15:sheets.countingStar
+def lst():
+    column_values = data["name"].tolist()
+    for i, value in enumerate(column_values):
+        # Her bir değerin ID'si +1 artsın (index 0 dan başladığı için)
+        id = i + 1
+        print(f"{id}: {value}")
 
-
-}
-
-# def log(name,value):
-    
-#     dir_path = os.path.dirname(os.path.abspath(__file__))
-    
-#     log_file_name = "sheets.py"
-#     log_file_path = os.path.join(dir_path, log_file_name)
-    
-#     # Loglama işlemi
-#     log_message = f'{name} = """{value}""" '
-#     with open(log_file_path, "a", encoding='utf-8') as log_file:
-#         log_file.write(log_message + "\n")
-    
-#     print("Loglama işlemi tamamlandı.")
+def wrt(name, sheet):
+    global data
+    id = data['ID'].max() + 1
+    yeni_veri = pd.DataFrame({"ID": [id], "name": [name], "sheet": [sheet]})
+    data = pd.concat([data, yeni_veri], ignore_index=True)
+    data.to_csv("database.csv", index=False)
 
 
 def geriSay():
@@ -53,12 +37,9 @@ def playMusic(metin,hiz):
     geriSay()
 
     startTime = time.time()
-
     metin = metin.replace(".","x").lower()
-
     sheet = "a1 a2 a3 a4 a5 b1 b2 b3 b4 b5 c1 c2 c3 c4 c5".split()
     key = "y u ı o p h j k l ş n m ö ç b".split()# buraya kendi klavyenizdeki piyano tuşlarını yazın ("." karakteri desteklenmiyor o yüzden "." olan yeri "b" ile değiştirdim, oyundaki kontrollerden ". notasını b ile değişirin")
-    
     for i in range(len(sheet)):
         metin = metin.replace(sheet[i], key[i])
 
@@ -103,19 +84,21 @@ def programiCalistir():
     metin = input()
     if metin == "0":
         print("Hazır müziklerden seçin")
-        liste = sheets.liste
-        print(liste)
+        lst()
         selection = int(input())
-        playMusic(muzikler[selection],hizAyarla())
+        playMusic(bring(selection),hizAyarla())
         
     else:
-        # name = input("müziğin adını girin: ")
-        # log(name,metin)
+        name = input("müziğin adını girin: ")
+        try:
+            wrt(" "+name, metin)
+            print("Hazır Müziklere eklendi")
+        except:
+            print("notalar kaydedilirken bir sorun oluştu")
+            pass
+
         playMusic(metin,hizAyarla())
         
-        
-
-
 
 while True:
    
