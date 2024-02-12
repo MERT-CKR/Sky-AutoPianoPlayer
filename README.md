@@ -17,6 +17,8 @@ pip install pandas
 pip install keyboard
 ```
 
+## Before using this application, ensure that Python is installed on your computer.
+
 ### Usage:
 
 * Ensure that `SkySheet.py` and `database.csv` are located in the same directory.
