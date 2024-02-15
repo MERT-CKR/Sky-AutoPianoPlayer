@@ -1,7 +1,44 @@
 import time
 import keyboard
 import pandas as pd
-data = pd.read_csv("database.csv")
+import os
+import json
+
+with open("settings.json", "r", encoding="utf-8") as file:
+    data = json.load(file)
+    print(data)
+
+# Veriyi görüntüle
+if data["settings"][0]["firstTime"] == 1:
+    pass
+else:
+    print("its look like you're new here")
+
+    data["settings"][0]["firstTime"] = 1
+
+    print("When you equip your instrument in Sky, enter the letters on the buttons in order.")
+    print("E.g.: (y, u, i, o, ...)")
+    print("Note: You can only use 15-button instrument.")
+    print('If one of the letters on your buttons is ".", change it to another key from Settings>Controls (suggestion: b). Otherwise, that button will not be pressed.')
+
+    newKeys = input()
+    newKeys = newKeys.replace(",", " ")
+
+    if newKeys == "":
+        data["settings"][0]["keys"] = data["settings"][0]["Default_keys"]
+    else:
+        data["settings"][0]["keys"] = newKeys
+
+with open("settings.json", "w", encoding="utf-8") as file:
+    json.dump(data, file, indent=4, ensure_ascii=False)
+
+print("key asignment sucsessfull")
+key =  data["settings"][0]["keys"]
+
+
+current_directory = os.getcwd()
+fpath = os.path.join(current_directory, "database.csv")
+data = pd.read_csv(fpath)
 
 def bring(id):
     sheet_value = data.loc[id-1, 'sheet']
@@ -37,7 +74,7 @@ def playMusic(sheets,speed):
     startTime = time.time()
     sheets = sheets.replace(".","x").lower()
     cords = "a1 a2 a3 a4 a5 b1 b2 b3 b4 b5 c1 c2 c3 c4 c5".split()
-    key = "y u ı o p h j k l ş n m ö ç b".split()
+    key = key.split()
     for i in range(len(cords)):
         sheets = sheets.replace(cords[i], key[i])
 
@@ -65,7 +102,7 @@ def playMusic(sheets,speed):
                 
 
 def setSpeed():
-    speed = float(input("enter play speed as (1,2,3,4,5) (1 quick, 5 slow)\nSuggestion 2 or 3: "))
+    speed = float(input("enter play speed as (1,2,3,4,5) (1 quick, 5 slow)\nSuggestion 2 or 3:\n"))
     if speed <0 or speed >=10:
         print("speed set as 3, you entered a wrong value")
         speed = 3
@@ -76,22 +113,22 @@ def setSpeed():
     
 
 def Run():
-    print("Enter sheets here. if you don't have press 0: ")
+    print("Enter sheets here. if you don't have press 0:\n")
 
     sheets = input()
     if sheets == "0":
-        print("Choose one of the preloaded music.")
+        print("Choose one of the preloaded music\n")
         showList()
         selection = int(input())
         playMusic(bring(selection),setSpeed())
         
     else:
-        name = input("Enter name of music: ")
+        name = input("Enter name of music:\n")
         try:
             write(" "+name, sheets)
             print("added to your preloaded songs library")
         except:
-            print("something went wrong")
+            print("something went wrong:/")
             pass
 
         playMusic(sheets,setSpeed())
@@ -100,6 +137,6 @@ def Run():
 while True:
    
     Run()
-    keepContinue = int(input("Press 1 to restart the program: "))
+    keepContinue = int(input("Press 1 to restart the program:\n"))
     if keepContinue != 1:
         break
