@@ -2,6 +2,7 @@
 
 ## This application is designed specifically for use with the Sky: Children of the Light game available on the Steam demo version.
 
+## [you can test here without game](https://specy.github.io/skyMusic/)
 ## Prerequisites:
 You need to have the following libraries installed:
 - [pandas](https://pandas.pydata.org/)
