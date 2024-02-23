@@ -15,4 +15,4 @@ new_data = {
 with open("settings.json", "w", encoding="utf-8") as file:
     json.dump(new_data, file, indent=4, ensure_ascii=False)
 
-print("JSON dosyası başarıyla güncellendi.")
+print("key rest successfull.")

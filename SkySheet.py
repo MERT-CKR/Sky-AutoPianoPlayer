@@ -31,7 +31,7 @@ else:
 with open("settings.json", "w", encoding="utf-8") as file:
     json.dump(data, file, indent=4, ensure_ascii=False)
 
-print("key asignment sucsessfull")
+print("key assignment successfull")
 key =  data["settings"][0]["keys"]
 key = key.split()
 
@@ -74,15 +74,17 @@ def playMusic(sheets,speed):
     startTime = time.time()
     sheets = sheets.replace(".","?").lower()
     cords = "a1 a2 a3 a4 a5 b1 b2 b3 b4 b5 c1 c2 c3 c4 c5".split()
+    oldSheets = sheets.split()
     for i in range(len(cords)):
         sheets = sheets.replace(cords[i], key[i])
 
-    
+    x=0
     for i in sheets.split():
+            x=x+1
             if i !="?":
-                print(i)
+                print(f"{i} ({oldSheets[x]})")
             if keyboard.is_pressed('"'):
-                print('pressed " key,loop is getting end.')
+                print('pressed " key, loop is getting end.')
                 break
             if i == "?":
                 print("wait")
@@ -90,7 +92,7 @@ def playMusic(sheets,speed):
                 pass
             else:
                 if keyboard.is_pressed('"'):
-                    print('pressed " key,loop is getting end.')
+                    print('pressed " key, loop is getting end.')
                     break
                 for char in i:
                     keyboard.press(char)
@@ -108,29 +110,29 @@ def playMusic(sheets,speed):
 
                 
 
-def setSpeed():
-    speed = float(input("enter play speed as (1,2,3,4,5) (1 quick, 5 slow)\nSuggestion 2 or 3:\n"))
+def adjustSpeed():
+    speed = float(input("enter play speed as (1,2,3,4,5). (1 quick, 5 slow)\nSuggestion 3:\n"))
     if speed <0 or speed >=10:
-        print("speed set as 3, you entered a wrong value")
+        print(" you entered a wrong value, speed adjusted as 3")
         speed = 3
     speed = speed / 10
-    print("Speed setted:", speed)
+    print("Speed adjusted:", speed)
     return speed
 
     
 
 def Run():
-    print("Enter sheets here. if you don't have press 0:\n")
+    print("Enter sheet music here. if you don't have press 0:\n")
 
     sheets = input()
     if sheets == "0":
         print("Choose one of the preloaded music\n")
         showList()
         selection = int(input())
-        playMusic(bring(selection),setSpeed())
+        playMusic(bring(selection),adjustSpeed())
         
     else:
-        name = input("Enter name of music:\n")
+        name = input("Enter the name of music:\n")
         try:
             write(" "+name, sheets)
             print("added to your preloaded songs library")
@@ -138,7 +140,7 @@ def Run():
             print("something went wrong:/")
             pass
 
-        playMusic(sheets,setSpeed())
+        playMusic(sheets,adjustSpeed())
         
 
 while True:
