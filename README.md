@@ -47,6 +47,3 @@ pip install keyboard
 * Remember, the application simulates key presses. If you attempt to close the game before closing the program, it will continue to press keys, potentially resulting in unexpected behavior.
 
 * To close the program, press the designated key (").
-
-
-[![GitHub Views](https://komarev.com/ghpvc/?username=MERT-CKR&label=Repo+Views&color=ff69b4&style=plastic)](https://github.com/MERT-CKR/SkyShettToPiano)
