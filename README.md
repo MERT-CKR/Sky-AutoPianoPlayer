@@ -48,4 +48,5 @@ pip install keyboard
 
 * To close the program, press the designated key (").
 
-[![GitHub Views](https://komarev.com/ghpvc/?username=MERT-CKR&label=Repo+Views)](https://github.com/MERT-CKR/SkyShettToPiano)
+
+[![GitHub Views](https://komarev.com/ghpvc/?username=MERT-CKR&label=Repo+Views&color=ff69b4&style=plastic)](https://github.com/MERT-CKR/SkyShettToPiano)
