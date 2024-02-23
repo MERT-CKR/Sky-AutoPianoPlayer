@@ -1,5 +1,6 @@
 # SkyShettToPiano
-[![check in youtube](https://img.youtube.com/vi//m1z8hYJvY2o?si=kcQkoyUbS7QoKfhq/0.jpg)](https://youtu.be/m1z8hYJvY2o?si=kcQkoyUbS7QoKfhq)
+[![how it seems?](https://img.youtube.com/vi/m1z8hYJvY2o/0.jpg)](https://youtu.be/m1z8hYJvY2o?si=nNCuvcr137Wvi4CF)
+
 
 
 ## This application is designed specifically for use with the Sky: Children of the Light game available on the Steam demo version.
