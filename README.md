@@ -8,10 +8,7 @@ You need to have the following libraries installed:
 - [pandas](https://pandas.pydata.org/)
 - [keyboard](https://pypi.org/project/keyboard/)
 
-
-## watch in youtube 
-[![how it seems?](https://img.youtube.com/vi/m1z8hYJvY2o/0.jpg)](https://youtu.be/m1z8hYJvY2o?si=nNCuvcr137Wvi4CF)
-
+
 Install them using the following commands in your command line interface:
 
 ```cmd
@@ -21,6 +18,11 @@ pip install pandas
 ```cmd
 pip install keyboard
 ```
+
+## watch in youtube 
+[![how it seems?](https://img.youtube.com/vi/m1z8hYJvY2o/0.jpg)](https://youtu.be/m1z8hYJvY2o?si=nNCuvcr137Wvi4CF)
+
+
 
 ### Before using this application, ensure that Python is installed on your computer.
 
