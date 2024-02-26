@@ -38,10 +38,10 @@ a,s,d,f,g,h,j,k,l
 * You can select a piece of music from the ready-made options or learn where to find the notes in the following step:
 
 * Go to the [Sky Music website](https://sky-music.herokuapp.com/), select the song library from the hamburger menu.
-* Choose a piece of music to play and click on the download button.
-* Proceed to the sheet display section.
-* At the bottom of the page, you will find the sheet musics. Copy the sheet music and paste it into `SkySheet.py`.
-* The  sheet music will be automatically added to the database, allowing you to use it next time.
+Choose a piece of music to play and click on the download button.
+Proceed to the sheet display section.
+At the bottom of the page, you will find the sheet musics. Copy the sheet music and paste it into `SkySheet.py`.
+The  sheet music will be automatically added to the database, allowing you to use it next time.
 
 * To delete any saved music, open the `database.csv` file and delete the corresponding entry. It's recommended to do this using `VS CODE`.
 
@@ -62,16 +62,17 @@ a,s,d,f,g,h,j,k,l
 ```SkySheet.py
 q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
 ```
-*eğer oyundaki piyanoyu kullanıyorsanız tuşların üzerinde yazan harfleri aralarında virgül ile yazın.
+* eğer oyundaki piyanoyu kullanıyorsanız tuşların üzerinde yazan harfleri aralarında virgül ile yazın.
 
-*tuşları yanlış girdiyseniz`reset key settings.py` dosyasını çalıştırabilirsiniz, bu sizden tekrar tuş girmenizi isteyecektir
+* tuşları yanlış girdiyseniz`reset key settings.py` dosyasını çalıştırabilirsiniz, bu sizden tekrar tuş girmenizi isteyecektir
 
-*sonraki adımda program sizden hazır müziklerden birini seçmenizi veya nota girmenizi isteyecek,hazır müziklerden birini seçebilirsiniz veya aşağıdaki adımda notaları nereden bulacağınızı öğrenebilirsiniz 
+* sonraki adımda program sizden hazır müziklerden birini seçmenizi veya nota girmenizi isteyecek,hazır müziklerden birini seçebilirsiniz veya aşağıdaki adımda notaları nereden bulacağınızı öğrenebilirsiniz 
 
-*[Sky Müzik websitesine](https://sky-music.herokuapp.com/) gidin hamburger menüsünden song library bölümünü seçin.
+* [Sky Müzik websitesine](https://sky-music.herokuapp.com/) gidin hamburger menüsünden song library bölümünü seçin.
 Çalmak istediğiniz bir müzik parçası seçin ve indirme düğmesine tıklayın.
 Ardından, müzik notalarının görüntülendiği bölüme gidin(sheet displayer).
-Sayfanın alt kısmında müzik notalarını bulacaksınız. Notaları kopyalayın ve `SkySheet.py` dosyasına yapıştırın.
+Sayfanın alt kısmında müzik notalarını bulacaksınız.
+Notaları kopyalayın ve `SkySheet.py` dosyasına yapıştırın.
 Müzik notaları otomatik olarak veritabanına eklenecek ve bir dahaki sefere kullanabileceksiniz.
 
 * Kayıtlı herhangi bir müziği silmek için `database.csv` dosyasını açın ve ilgili girişi silin, bu işlemi `VS CODE` üzerinden yapmanız önerilir.
