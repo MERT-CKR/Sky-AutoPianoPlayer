@@ -57,7 +57,7 @@ a,s,d,f,g,h,j,k,l
 * To close the program, press the designated key (").
 
 
-### Türkçe kullanım Rehberi:
+# Türkçe kullanım Rehberi:
 *bu uygulamayı ilk açtığınızda sizden tuş atamsı isteyecek eğer linkini verdiğim [bu sitedeki](https://sky-music.herokuapp.com/) piyanoyu kullanıyorsanız tuş atamasına bunu yapıştırın. 
 ```SkySheet.py
 q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
