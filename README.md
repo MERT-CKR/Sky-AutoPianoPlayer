@@ -27,6 +27,7 @@ pip install keyboard
 q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
 ```
 * If you are using the in-game piano, list the letters written on the keys separated by commas.
+Note: if there is a dot or comma ('.' ',' ',') character between the piano keys in the game, replace it with other keys, suggestion 'b' key
 ```
 a,s,d,f,g,h,j,k,l
 ```
@@ -62,6 +63,7 @@ The  sheet music will be automatically added to the database, allowing you to us
 q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
 ```
 * eğer oyundaki piyanoyu kullanıyorsanız tuşların üzerinde yazan harfleri aralarında virgül ile yazın.
+ Not: eğer oyundaki piyano tuşlarının arasında nokta veya virgül('.' ',') karakteri varsa bunu başka tuşlarala değiştirin öneri 'b' tuşu
 
 * tuşları yanlış girdiyseniz`reset key settings.py` dosyasını çalıştırabilirsiniz, bu sizden tekrar tuş girmenizi isteyecektir
 
