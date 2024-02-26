@@ -1,4 +1,4 @@
-# SkyShettToPiano
+# Sky-AutoPianoPlayer
 
 ## This application is designed specifically for use with the Sky: Children of the Light game available on the Steam demo version.
 
@@ -24,10 +24,13 @@ pip install keyboard
 
 * When you first open this application, it will prompt you for key assignments. 
 * If you are using the piano from [this site](https://sky-music.herokuapp.com/), paste the key assignments as follows:
-piano_keys = 'q,w,e,r,t,a,s,d,f,g,z,x,c,v,b'
-
+```
+q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
+```
 * If you are using the in-game piano, list the letters written on the keys separated by commas.
-* For example: piano_keys = 'a,s,d,f,g,h,j,k,l'
+```
+a,s,d,f,g,h,j,k,l
+```
 
 * If you input the keys incorrectly, you can run `reset_key_settings.py`, which will prompt you to enter the keys again.
 
