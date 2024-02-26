@@ -5,8 +5,7 @@
 ## [you can test here without game](https://specy.github.io/skyMusic/)
 ## Prerequisites:
 You need to have the following libraries installed:
-- [pandas](https://pandas.pydata.org/)
-- [keyboard](https://pypi.org/project/keyboard/)
+- [pandas](https://pandas.pydata.org/), [keyboard](https://pypi.org/project/keyboard/)
 
 Install them using the following commands in your command line interface:
 
@@ -58,7 +57,7 @@ The  sheet music will be automatically added to the database, allowing you to us
 
 
 # Türkçe kullanım Rehberi:
-*bu uygulamayı ilk açtığınızda sizden tuş atamsı isteyecek eğer linkini verdiğim [bu sitedeki](https://sky-music.herokuapp.com/) piyanoyu kullanıyorsanız tuş atamasına bunu yapıştırın. 
+* bu uygulamayı ilk açtığınızda sizden tuş atamsı isteyecek eğer linkini verdiğim [bu sitedeki](https://sky-music.herokuapp.com/) piyanoyu kullanıyorsanız tuş atamasına bunu yapıştırın. 
 ```SkySheet.py
 q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
 ```
