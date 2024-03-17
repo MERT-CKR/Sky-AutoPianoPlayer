@@ -8,19 +8,47 @@ with open("settings.json", "r", encoding="utf-8") as file:
     data = json.load(file)
 
 
+current_directory = os.getcwd()
+jsonFilePath = os.path.join(current_directory,"translations.json")
+
+
+def load_translations():
+    if data["settings"][0]["firstTime"] == 0 or data["settings"][0]["language"]=="":
+        print("Select your language: \n1.Türkçe \n2.English")
+        lang = int(input(">> "))
+        if lang == 1:
+            user_locale = "tr"
+        elif lang == 2:
+            user_locale = "en"
+
+        data["settings"][0]["language"] = user_locale
+
+        with open('settings.json', 'w', encoding="utf-8") as dosya:
+            json.dump(data, dosya, indent=4,ensure_ascii=False)
+    else:
+        user_locale = data["settings"][0]["language"]
+
+
+    with open(jsonFilePath, 'r', encoding='utf-8') as f:
+        translations = json.load(f)
+
+    global _
+    _ = lambda key: translations['languages'][key][user_locale]
+
+load_translations()
 if data["settings"][0]["firstTime"] == 1:
     pass
 else:
-    print("its look like you're new here")
+    print(_("first_opening"))
 
     data["settings"][0]["firstTime"] = 1
 
-    print("When you equip your instrument in Sky, enter the letters on the buttons in order.")
-    print("E.g.: (y, u, i, o, ...)")
-    print("Note: You can only use 15-button instrument.")
-    print('If one of the letters on your buttons is ".", change it to another key from Settings>Controls (suggestion: b). Otherwise, that button will not be pressed.')
+    print(_("tutorial1"))
+    print(_("tutorial2"))
+    print(_("tutorial3"))
+    print(_("tutorial4"))
 
-    newKeys = input()
+    newKeys = input(">>")
     newKeys = newKeys.replace(",", " ")
 
     if newKeys == "":
@@ -31,7 +59,7 @@ else:
 with open("settings.json", "w", encoding="utf-8") as file:
     json.dump(data, file, indent=4, ensure_ascii=False)
 
-print("key assignment successfull")
+print(_("key_assigned"))
 key =  data["settings"][0]["keys"]
 key = key.split()
 
@@ -59,7 +87,7 @@ def write(name, sheet):
 
 
 def countDown():
-    print("Starting...")
+    print(_("starting"))
     time.sleep(1)
     print(4)
     time.sleep(1)
@@ -82,9 +110,9 @@ def playMusic(sheets,speed):
     for i in sheets.split():
             x=x+1
             if i !="?":
-                print(f"{i} ({oldSheets[x]})")
+                print(i)
             if keyboard.is_pressed('"'):
-                print('pressed " key, loop is getting end.')
+                print(_("loop_ending"))
                 break
             if i == "?":
                 print("wait")
@@ -92,7 +120,7 @@ def playMusic(sheets,speed):
                 pass
             else:
                 if keyboard.is_pressed('"'):
-                    print('pressed " key, loop is getting end.')
+                    print(_("loop_ending"))
                     break
                 for char in i:
                     keyboard.press(char)
@@ -106,38 +134,41 @@ def playMusic(sheets,speed):
     endTime = time.time()
     duration = endTime - startTime
     duration = str(duration)[:4]
-    print(f"Playback duration: {duration} sec")
+    print(_("play_time"))
+    print(">> ",duration)
 
                 
 
 def adjustSpeed():
-    speed = float(input("enter play speed as (1,2,3,4,5). (1 quick, 5 slow)\nSuggestion 3:\n"))
+    print(_("play_speed"))
+    speed = float(input(">> "))
     if speed <0 or speed >=10:
-        print(" you entered a wrong value, speed adjusted as 3")
+        print(_("invalid_play_speed"))
         speed = 3
     speed = speed / 10
-    print("Speed adjusted:", speed)
+    print(_("speed_adjusted"))
+    print(">>",speed)
     return speed
 
     
 
 def Run():
-    print("Enter sheet music here. if you don't have press 0:\n")
+    print(_("do_you_have_sheets"))
 
-    sheets = input()
+    sheets = input(">> ")
     if sheets == "0":
-        print("Choose one of the preloaded music\n")
+        print(_("choose_preloaded_music"))
         showList()
-        selection = int(input())
+        selection = int(input("\n>> "))
         playMusic(bring(selection),adjustSpeed())
         
     else:
-        name = input("Enter the name of music:\n")
+        name = input(_("enter_music_name"))
         try:
             write(" "+name, sheets)
-            print("added to your preloaded songs library")
+            print(_("added_to_preloaded_library"))
         except:
-            print("something went wrong:/")
+            print(_("not_added_to_preloaded_lib"))
             pass
 
         playMusic(sheets,adjustSpeed())
@@ -146,6 +177,7 @@ def Run():
 while True:
    
     Run()
-    keepContinue = input("Press 1 to restart the program:\n")
+    print(_("restart"))
+    keepContinue = input(">> ")
     if keepContinue != "1":
         break
