@@ -32,7 +32,7 @@ Note: if there is a dot or comma ('.' ',' ',') character between the piano keys 
 a,s,d,f,g,h,j,k,l
 ```
 
-* If you input the keys incorrectly, you can run `reset_key_settings.py`, which will prompt you to enter the keys again.
+* If you input the keys incorrectly, you can run `reset all settings.py`, which will prompt you to enter the keys again.
 
 * In the next step, the program will ask you to choose a ready-made music or enter notes manually.
 * You can select a piece of music from the ready-made options or learn where to find the notes in the following step:
