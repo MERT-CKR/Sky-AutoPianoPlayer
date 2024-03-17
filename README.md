@@ -65,7 +65,7 @@ q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
 * eğer oyundaki piyanoyu kullanıyorsanız tuşların üzerinde yazan harfleri aralarında virgül ile yazın.
  Not: eğer oyundaki piyano tuşlarının arasında nokta veya virgül('.' ',') karakteri varsa bunu başka tuşlarala değiştirin öneri 'b' tuşu
 
-* tuşları yanlış girdiyseniz`reset key settings.py` dosyasını çalıştırabilirsiniz, bu sizden tekrar tuş girmenizi isteyecektir
+* tuşları yanlış girdiyseniz `reset key settings.py` dosyasını çalıştırabilirsiniz, bu sizden tekrar tuş girmenizi isteyecektir
 
 * sonraki adımda program sizden hazır müziklerden birini seçmenizi veya nota girmenizi isteyecek,hazır müziklerden birini seçebilirsiniz veya aşağıdaki adımda notaları nereden bulacağınızı öğrenebilirsiniz 
 
