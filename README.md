@@ -32,7 +32,7 @@ Note: if there is a dot or comma ('.' ',' ',') character between the piano keys 
 a,s,d,f,g,h,j,k,l
 ```
 
-* If you input the keys incorrectly, you can run `reset all settings.py`, which will prompt you to enter the keys again.
+* If you input the keys incorrectly, you can run `reset all settings.py` , which will prompt you to enter the keys again and also allows you to choose the language again.
 
 * In the next step, the program will ask you to choose a ready-made music or enter notes manually.
 * You can select a piece of music from the ready-made options or learn where to find the notes in the following step:
@@ -65,7 +65,7 @@ q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
 * eğer oyundaki piyanoyu kullanıyorsanız tuşların üzerinde yazan harfleri aralarında virgül ile yazın.
  Not: eğer oyundaki piyano tuşlarının arasında nokta veya virgül('.' ',') karakteri varsa bunu başka tuşlarala değiştirin öneri 'b' tuşu
 
-* tuşları yanlış girdiyseniz `reset key settings.py` dosyasını çalıştırabilirsiniz, bu sizden tekrar tuş girmenizi isteyecektir
+* tuşları yanlış girdiyseniz `reset all settings.py` dosyasını çalıştırabilirsiniz, bu sizden tekrar tuş girmenizi isteyecektir ayrıca dil seçimini tekrar yapmanıza olanak tanır
 
 * sonraki adımda program sizden hazır müziklerden birini seçmenizi veya nota girmenizi isteyecek,hazır müziklerden birini seçebilirsiniz veya aşağıdaki adımda notaları nereden bulacağınızı öğrenebilirsiniz 
 
