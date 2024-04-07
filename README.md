@@ -28,7 +28,7 @@ pip install keyboard
 ```
 q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
 ```
-![tutorialJPG](https://github.com/MERT-CKR/Sky-AutoPianoPlayer/blob/main/readme tutorial/readme tutorial.jpg)
+![tutorialJPG](https://github.com/MERT-CKR/Sky-AutoPianoPlayer/blob/main/readme%tutorial/readme%tutorial.jpg)
 * If you are using the in-game piano, list the letters written on the keys separated by commas.
 Note: if there is a dot or comma ('.' ',' ',') character between the piano keys in the game, replace it with other keys, suggestion 'b' key
 
