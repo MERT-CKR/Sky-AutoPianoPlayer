@@ -21,13 +21,15 @@ pip install keyboard
 
 
 ### Usage:
- #### key assignment
+ #### - key Assignment
 
 * When you first open this application, it will prompt you for key assignments. 
 * If you are using the piano from [this site](https://sky-music.herokuapp.com/), paste the key assignments as follows:
 ```
 q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
 ```
+
+* Or if you are using the instrument in the game, write the labels on the keys as shown in the picture below, separated by commas, respectively.
 ![tutorialJPG](https://github.com/MERT-CKR/Sky-AutoPianoPlayer/blob/main/readmeJPG/readmeJPG.jpg)
 * If you are using the in-game piano, list the letters written on the keys separated by commas.
 Note: if there is a dot or comma ('.' ',' ',') character between the piano keys in the game, replace it with other keys, suggestion 'b' key
