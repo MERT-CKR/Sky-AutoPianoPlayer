@@ -69,11 +69,11 @@ q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
 
 * ![tutorialJPG](https://github.com/MERT-CKR/Sky-AutoPianoPlayer/blob/main/readmeJPG/readmeJPG.jpg)
 
-* eğer oyundaki piyano tuşlarının arasında nokta veya virgül('.' ',') karakteri varsa bunları başka tuşlarala değiştirin öneri 'b' tuşu
+* Eğer oyundaki piyano tuşlarının arasında nokta veya virgül('.' ',') karakteri varsa bunları başka tuşlarala değiştirin öneri 'b' tuşu
 
-* tuşları yanlış girdiyseniz `reset all settings.py` dosyasını çalıştırabilirsiniz, bu sizden tekrar tuş girmenizi isteyecektir ayrıca dil seçimini tekrar yapmanıza olanak tanır
+* Tuşları yanlış girdiyseniz `reset all settings.py` dosyasını çalıştırabilirsiniz, bu sizden tekrar tuş girmenizi isteyecektir ayrıca dil seçimini tekrar yapmanıza olanak tanır
 
-* sonraki adımda program sizden hazır müziklerden birini seçmenizi veya nota girmenizi isteyecek,hazır müziklerden birini seçebilirsiniz veya aşağıdaki adımda notaları nereden bulacağınızı öğrenebilirsiniz 
+* Sonraki adımda program sizden hazır müziklerden birini seçmenizi veya nota girmenizi isteyecek,hazır müziklerden birini seçebilirsiniz veya aşağıdaki adımda notaları nereden bulacağınızı öğrenebilirsiniz 
 
 * [Sky Müzik websitesine](https://sky-music.herokuapp.com/) gidin hamburger menüsünden song library bölümünü seçin.
 Çalmak istediğiniz bir müzik parçası seçin ve indirme düğmesine tıklayın.
