@@ -4,6 +4,7 @@
 
 ## [you can test here without game](https://specy.github.io/skyMusic/)
 ## Prerequisites:
+### Before using this application, ensure that Python is installed on your computer.
 You need to have the following libraries installed:
 - [pandas](https://pandas.pydata.org/), [keyboard](https://pypi.org/project/keyboard/)
 
@@ -17,7 +18,7 @@ pip install pandas
 pip install keyboard
 ```
 
-### Before using this application, ensure that Python is installed on your computer.
+
 
 ### Usage:
 
