@@ -11,11 +11,19 @@ with open("settings.json", "r", encoding="utf-8") as file:
 current_directory = os.getcwd()
 jsonFilePath = os.path.join(current_directory,"translations.json")
 
+#if you user enter wrong value. call input again
+def inputForce(prompt, Typ=int):
+    while True:
+        try:
+            Input0 = Typ(input(prompt))
+            return Input0
+        except ValueError:
+            print(_("invalid_prompt"))
 
 def load_translations():
     if data["settings"][0]["firstTime"] == 0 or data["settings"][0]["language"]=="":
         print("Select your language: \n1.Türkçe \n2.English")
-        lang = int(input(">> "))
+        lang = inputForce(">> ")
         if lang == 1:
             user_locale = "tr"
         elif lang == 2:
@@ -35,6 +43,8 @@ def load_translations():
     global _
     _ = lambda key: translations['languages'][key][user_locale]
 
+
+
 load_translations()
 if data["settings"][0]["firstTime"] == 1:
     pass
@@ -47,8 +57,7 @@ else:
     print(_("tutorial2"))
     print(_("tutorial3"))
     print(_("tutorial4"))
-
-    newKeys = input(">>")
+    newKeys = inputForce(">> ",str)
     newKeys = newKeys.replace(",", " ")
 
     if newKeys == "":
@@ -106,9 +115,8 @@ def playMusic(sheets,speed):
     for i in range(len(cords)):
         sheets = sheets.replace(cords[i], key[i])
 
-    x=0
     for i in sheets.split():
-            x=x+1
+           
             if i !="?":
                 print(i)
             if keyboard.is_pressed('"'):
@@ -141,7 +149,8 @@ def playMusic(sheets,speed):
 
 def adjustSpeed():
     print(_("play_speed"))
-    speed = float(input(">> "))
+
+    speed = inputForce(">> ",float)
     if speed <0 or speed >=10:
         print(_("invalid_play_speed"))
         speed = 3
@@ -155,15 +164,16 @@ def adjustSpeed():
 def Run():
     print(_("do_you_have_sheets"))
 
-    sheets = input(">> ")
+    sheets = inputForce(">> ",str)
     if sheets == "0":
         print(_("choose_preloaded_music"))
         showList()
-        selection = int(input("\n>> "))
+        selection = inputForce("\n>> ")
         playMusic(bring(selection),adjustSpeed())
         
     else:
-        name = input(_("enter_music_name"))
+        print(_("enter_music_name"))
+        name = inputForce("",str)
         try:
             write(" "+name, sheets)
             print(_("added_to_preloaded_library"))
