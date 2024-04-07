@@ -64,8 +64,12 @@ The  sheet music will be automatically added to the database, allowing you to us
 ```SkySheet.py
 q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
 ```
-* eğer oyundaki piyanoyu kullanıyorsanız tuşların üzerinde yazan harfleri aralarında virgül ile yazın.
- Not: eğer oyundaki piyano tuşlarının arasında nokta veya virgül('.' ',') karakteri varsa bunu başka tuşlarala değiştirin öneri 'b' tuşu
+
+* Eğer oyundaki enstrümanı kullanıyorsanız ağaşıdaki resimdeki gibi   tuşların üzerindeki harfleri sırasıyla aralarında virgül olacak şekilde   yazın.
+
+* ![tutorialJPG](https://github.com/MERT-CKR/Sky-AutoPianoPlayer/blob/main/readmeJPG/readmeJPG.jpg)
+
+* eğer oyundaki piyano tuşlarının arasında nokta veya virgül('.' ',') karakteri varsa bunları başka tuşlarala değiştirin öneri 'b' tuşu
 
 * tuşları yanlış girdiyseniz `reset all settings.py` dosyasını çalıştırabilirsiniz, bu sizden tekrar tuş girmenizi isteyecektir ayrıca dil seçimini tekrar yapmanıza olanak tanır
 
