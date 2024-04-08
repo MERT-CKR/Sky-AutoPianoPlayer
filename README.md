@@ -31,7 +31,7 @@ q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
 
 * Or if you are using the instrument in the game, write the labels on the keys as shown in the picture below, separated by commas, respectively.
 * ![tutorialJPG](https://github.com/MERT-CKR/Sky-AutoPianoPlayer/blob/main/readmeJPG/readmeJPG.jpg)
-* If there are dots or commas ('.' ',') between the piano keys in the game, replace them with other keys. Suggestion: 'b' key.
+* If there are dots or commas ('.' ',') between the piano keys in the game, replace them with other keys from the game settings. Suggested key: 'b' or any empty key.
 
 
 * If you input the keys incorrectly, you can run `reset all settings.py` , which will prompt you to enter the keys again and also allows you to choose the language again.
