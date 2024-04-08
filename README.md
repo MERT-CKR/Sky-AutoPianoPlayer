@@ -42,7 +42,7 @@ q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
 * Go to the [Sky Music website](https://sky-music.herokuapp.com/), select the song library from the hamburger menu.
 Choose a piece of music to play and click on the download button.
 Proceed to the sheet display section.
-At the bottom of the page, you will find the sheet musics. Copy the sheet music and paste it into `SkySheet.py`.
+At the bottom of the page, you will find the sheet musics. Copy the sheet music and paste it into `AutoPianoPlayer.py`.
 The  sheet music will be automatically added to the database, allowing you to use it next time.
 
 * To delete any saved music, open the `database.csv` file and delete the corresponding entry. It's recommended to do this using `VS CODE`.
@@ -76,11 +76,11 @@ q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
 * Sonraki adımda program sizden hazır müziklerden birini seçmenizi veya nota girmenizi isteyecek,hazır müziklerden birini seçebilirsiniz veya aşağıdaki adımda notaları nereden bulacağınızı öğrenebilirsiniz 
 
 * [Sky Müzik websitesine](https://sky-music.herokuapp.com/) gidin hamburger menüsünden song library bölümünü seçin.
-Çalmak istediğiniz bir müzik parçası seçin ve indirme düğmesine tıklayın.
+Çalmak istediğiniz bir müzik parçası seçin ve indirme butonuna tıklayın.
 Ardından, müzik notalarının görüntülendiği bölüme gidin(sheet displayer).
 Sayfanın alt kısmında müzik notalarını bulacaksınız.
-Notaları kopyalayın ve `SkySheet.py` dosyasına yapıştırın.
-Müzik notaları otomatik olarak veritabanına eklenecek ve bir dahaki sefere kullanabileceksiniz.
+Notaları kopyalayın ve `AutoPianoPlayer.py` dosyasına yapıştırın.
+Müzik notaları otomatik olarak veritabanına eklenecektir ve bir dahaki sefere hazır müziklerden kullanabileceksiniz.
 
 * Kayıtlı herhangi bir müziği silmek için `database.csv` dosyasını açın ve ilgili girişi silin, bu işlemi `VS CODE` üzerinden yapmanız önerilir.
 
