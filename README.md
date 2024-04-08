@@ -60,16 +60,16 @@ The  sheet music will be automatically added to the database, allowing you to us
 
 
 # Türkçe kullanım Rehberi:
-* bu uygulamayı ilk açtığınızda sizden tuş atamsı isteyecek eğer linkini verdiğim [bu sitedeki](https://sky-music.herokuapp.com/) piyanoyu kullanıyorsanız tuş atamasına bunu yapıştırın. 
+* Bu uygulamayı ilk açtığınızda sizden tuş atamsı isteyecektir, eğer [bu sitedeki](https://sky-music.herokuapp.com/) piyanoyu kullanıyorsanız tuş atamasına bunu yapıştırın. 
 ```SkySheet.py
 q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
 ```
 
-* Eğer oyundaki enstrümanı kullanıyorsanız ağaşıdaki resimdeki gibi   tuşların üzerindeki harfleri sırasıyla aralarında virgül olacak şekilde   yazın.
+* Eğer oyundaki enstrümanı kullanıyorsanız ağaşıdaki resimdeki gibi tuşların üzerindeki harfleri sırasıyla aralarında virgül olacak şekilde yazın.
 
 * ![tutorialJPG](https://github.com/MERT-CKR/Sky-AutoPianoPlayer/blob/main/readmeJPG/readmeJPG.jpg)
 
-* Eğer oyundaki piyano tuşlarının arasında nokta veya virgül('.' ',') karakteri varsa bunları başka tuşlarala değiştirin öneri 'b' tuşu
+* Eğer oyundaki piyano tuşlarının arasında nokta veya virgül('.' ',') karakteri varsa bunları oyun ayarlarından başka tuşlarala değiştirin öneri 'b' tuşu veya herhangi bir boş tuş.
 
 * Tuşları yanlış girdiyseniz `reset all settings.py` dosyasını çalıştırabilirsiniz, bu sizden tekrar tuş girmenizi isteyecektir ayrıca dil seçimini tekrar yapmanıza olanak tanır
 
