@@ -92,4 +92,4 @@ Müzik notaları otomatik olarak veritabanına eklenecektir ve bir dahaki sefere
 
 * Unutmayın, uygulama klavyede tuş basmalarını simüle eder. Programı kapatmadan önce oyunu kapatmaya çalışırsanız, tuşlara basmaya devam eder ve beklenmeyen davranışlara neden olabilir.
 
-* Programı kapatmak için belirtilen tuşa (" tuşuna) basın.
+* Programı kapatmak için belirtilen tuşa ( " tuşuna) basın.
