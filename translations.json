@@ -1,5 +1,9 @@
 {
   "languages": {
+    "invalid_prompt":{
+      "tr":"Hatalı giriş. Lütfen tekrar deneyin.",
+      "en":"Invalid prompt. Please Try again"
+    },
     "tutorial1": {
       "tr": "Sky'da enstrümanını kuşandığında tuşların üzerindeki harfleri sırayla buraya yaz.",
       "en": "When you equip your instrument in Sky, enter the letters on the buttons here in order."
@@ -30,7 +34,7 @@
     },
     "loop_ending": {
       "tr": "\" Tuşuna basıldı, döngü sonlandırılıyor.",
-      "en": "\" Key pressed, ending the loop."
+      "en": "\" Key is pressed, loop is getting end."
     },
     "wait": {
       "tr": "Bekle",
@@ -60,6 +64,10 @@
       "tr": "Hazır müziklerden seçin:\n",
       "en": "Choose from preloaded music:\n"
     },
+    "wrong_char":{
+      "tr":"Notalar geçersiz karakter içeriyor: ",
+      "en":"Sheet musics contain invalid characters: "
+    },
     "enter_music_name": {
       "tr": "Bu müziğin adını girin:\n",
       "en": "Enter the name of this music:\n"
@@ -73,8 +81,8 @@
       "en": "A problem occurred while adding to the preloaded music library."
     },
     "restart": {
-      "tr": "Programı yeniden başlatmak için 1'e basın:\n",
-      "en": "Press 1 to restart the program:\n"
+      "tr": "Programı yeniden başlatmak için 1'e basın:\nÇıkmak için ise herhangi bir tuşa basın\n",
+      "en": "Press 1 to restart the program \nPress any key to exit\n"
     }
   }
 }

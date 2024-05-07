@@ -53,10 +53,11 @@ else:
 
     data["settings"][0]["firstTime"] = 1
 
-    print(_("tutorial1"))
-    print(_("tutorial2"))
     print(_("tutorial3"))
     print(_("tutorial4"))
+    print(_("tutorial1"))
+    print(_("tutorial2"))
+
     newKeys = inputForce(">> ",str)
     newKeys = newKeys.replace(",", " ")
 
@@ -124,7 +125,7 @@ def playMusic(sheets,speed):
                 break
             if i == "?":
                 print("wait")
-                time.sleep(speed+0.15)
+                time.sleep(speed+0.1)
                 pass
             else:
                 if keyboard.is_pressed('"'):
@@ -137,13 +138,13 @@ def playMusic(sheets,speed):
                 for char in i:
                     keyboard.release(char)
 
-                
+
 
     endTime = time.time()
     duration = endTime - startTime
     duration = str(duration)[:4]
     print(_("play_time"))
-    print(">> ",duration)
+    print(">> ",duration,"\n\n")
 
                 
 
@@ -163,8 +164,14 @@ def adjustSpeed():
 
 def Run():
     print(_("do_you_have_sheets"))
+    validChars ="A1,A2,A3,A4,A5,B1,B2,B3,B4,B5,C1,C2,C3,C4,C5, ,.,0".split(",")
 
     sheets = inputForce(">> ",str)
+
+    for s1 in sheets.split():
+        if s1 not in validChars:
+            raise ValueError(_("wrong_char"),(s1))
+    
     if sheets == "0":
         print(_("choose_preloaded_music"))
         showList()
@@ -180,7 +187,7 @@ def Run():
         except:
             print(_("not_added_to_preloaded_lib"))
             pass
-
+    
         playMusic(sheets,adjustSpeed())
         
 

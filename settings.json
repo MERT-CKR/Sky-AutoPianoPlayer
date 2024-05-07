@@ -3,8 +3,9 @@
         {
             "firstTime": 0,
             "Default_keys": "y u ı o p h j k l ş n m ö ç b",
-            "keys": "y u ı o p h j k l ş n m ö ç b",
-            "language": ""
+            "example": "q w e r t a s d f g z x c v b",
+            "language": "",
+            "keys": ""
         }
     ]
 }
