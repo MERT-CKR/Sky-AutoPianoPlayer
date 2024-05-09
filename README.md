@@ -56,7 +56,7 @@ The  sheet music will be automatically added to the database, allowing you to us
 
 * Remember, the application simulates key presses. If you attempt to close the game before closing the program,  it will continue to press keys, potentially resulting in unexpected behavior.
 
-* To close the program, press the designated key (").
+* To stop the program, press the designated key (").
 
 
 # Türkçe kullanım Rehberi:
