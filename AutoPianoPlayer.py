@@ -83,10 +83,12 @@ def bring(id):
     return sheet_value
 
 def showList():
+    global MaxId
     column_values = data["name"].tolist()
     for i, value in enumerate(column_values):
         id = i + 1
         print(f"{id}: {value}")
+    MaxId=id
 
 def write(name, sheet):
     global data
@@ -150,7 +152,6 @@ def playMusic(sheets,speed):
 
 def adjustSpeed():
     print(_("play_speed"))
-
     speed = inputForce(">> ",float)
     if speed <0 or speed >=10:
         print(_("invalid_play_speed"))
@@ -164,18 +165,41 @@ def adjustSpeed():
 
 def Run():
     print(_("do_you_have_sheets"))
-    validChars ="A1,A2,A3,A4,A5,B1,B2,B3,B4,B5,C1,C2,C3,C4,C5, ,.,0".split(",")
+    validChars =['A', 'B', 'C', '1', '2', '3', '4', '5', '.', '0']
 
-    sheets = inputForce(">> ",str)
+    def checkSheets():
+        while True:
+            try:
+                sheets = inputForce("\n>> ",str)
 
-    for s1 in sheets.split():
-        if s1 not in validChars:
-            raise ValueError(_("wrong_char"),(s1))
-    
+                checkSheets = sheets.replace(" ","")
+                for s in checkSheets:
+                    if s not in validChars:
+                        raise ValueError(_("wrong_char"),s)
+                break
+
+            except ValueError as err:
+                print(_("wrong_char"), err.args[1])
+                print(_("invalid_prompt"))
+                print(_("sample_sheet"))
+            except Exception as err:
+                print(_("unknown_err"), err)
+                print(_("invalid_prompt"))
+        return sheets
+    sheets = checkSheets()
+
+
     if sheets == "0":
         print(_("choose_preloaded_music"))
         showList()
-        selection = inputForce("\n>> ")
+        
+        while True:
+            selection = inputForce("\n>> ")
+            if selection <= MaxId and selection>=1:
+                break
+            else:
+                print(_("invalid_prompt"))
+
         playMusic(bring(selection),adjustSpeed())
         
     else:

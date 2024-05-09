@@ -57,8 +57,8 @@
       "en": "Speed adjusted:"
     },
     "do_you_have_sheets": {
-      "tr": "Notaları buraya girin, eğer notanız yoksa 0'a basın:\n",
-      "en": "Enter sheet music here. If you don't have any, press 0:\n"
+      "tr": "Notaları buraya girin, eğer notanız yoksa 0'a basın:",
+      "en": "Enter sheet music here. If you don't have any, press 0:"
     },
     "choose_preloaded_music": {
       "tr": "Hazır müziklerden seçin:\n",
@@ -67,6 +67,14 @@
     "wrong_char":{
       "tr":"Notalar geçersiz karakter içeriyor: ",
       "en":"Sheet musics contain invalid characters: "
+    },
+    "sample_sheet":{
+      "tr":"Örnek nota formatı: A1B2C3 A1 B5",
+      "en":"Sample sheet format: A1B2C3 A1 B5"
+    },
+    "unknown_err":{
+      "tr":"Bilinmeyen bir hata oluştu ",
+      "en":"An unknown error occurs: "
     },
     "enter_music_name": {
       "tr": "Bu müziğin adını girin:\n",
