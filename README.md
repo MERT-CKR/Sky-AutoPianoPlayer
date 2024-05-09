@@ -24,7 +24,7 @@ pip install keyboard
 #### key Assignment
 
 * When you first open this application, it will prompt you for key assignments. 
-* If you are using the piano from [this site](https://sky-music.herokuapp.com/), paste the key assignments as follows:
+* If you are using the piano from this site: [sky-music.herokuapp.com/](https://sky-music.herokuapp.com/), paste the key assignments as follows:
 ```
 q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
 ```
@@ -75,7 +75,7 @@ q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
 
 * Sonraki adımda program sizden hazır müziklerden birini seçmenizi veya nota girmenizi isteyecek,hazır müziklerden birini seçebilirsiniz veya aşağıdaki adımda notaları nereden bulacağınızı öğrenebilirsiniz 
 
-* [Sky Müzik websitesine](https://sky-music.herokuapp.com/) gidin hamburger menüsünden song library bölümünü seçin.
+* [sky-music.herokuapp.com sitesine](https://sky-music.herokuapp.com/) gidin hamburger menüsünden song library bölümünü seçin.
 Çalmak istediğiniz bir müzik parçası seçin ve indirme butonuna tıklayın.
 Ardından, müzik notalarının görüntülendiği bölüme gidin(sheet displayer).
 Sayfanın alt kısmında müzik notalarını bulacaksınız.
