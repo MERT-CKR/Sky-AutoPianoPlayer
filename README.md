@@ -1,3 +1,7 @@
+<span style="color:red">The performance of the note system used in this project is limited. Instead, I recommend using this: [Sky Instrument Player](https://github.com/MERT-CKR/Sky-Instrument-Player) project.</span>
+
+
+
 # Sky-AutoPianoPlayer
 
 ## This application is designed specifically for use with the Sky: Children of the Light game available on the Steam demo version.
