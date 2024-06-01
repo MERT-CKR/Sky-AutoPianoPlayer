@@ -79,7 +79,7 @@ q,w,e,r,t,a,s,d,f,g,z,x,c,v,b
 
 * Sonraki adımda program sizden hazır müziklerden birini seçmenizi veya nota girmenizi isteyecek,hazır müziklerden birini seçebilirsiniz veya aşağıdaki adımda notaları nereden bulacağınızı öğrenebilirsiniz 
 
-* [sky-music.herokuapp.com sitesine](https://sky-music.herokuapp.com/) gidin hamburger menüsünden song library bölümünü seçin.
+* [sky-music.herokuapp.com] sitesine(https://sky-music.herokuapp.com/) gidin hamburger menüsünden song library bölümünü seçin.
 Çalmak istediğiniz bir müzik parçası seçin ve indirme butonuna tıklayın.
 Ardından, müzik notalarının görüntülendiği bölüme gidin(sheet displayer).
 Sayfanın alt kısmında müzik notalarını bulacaksınız.
