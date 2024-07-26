@@ -1,5 +1,6 @@
 $${\color{red}note!}$$
-The performance of the note system used in this project is limited. Instead, I recommend using this project: [Sky-Instrument-Player](https://github.com/MERT-CKR/Sky-Instrument-Player)
+
+# The performance of the note system used in this project is limited. Instead, I recommend using this project: [Sky-Instrument-Player](https://github.com/MERT-CKR/Sky-Instrument-Player)
 
 
 # Sky-AutoPianoPlayer
